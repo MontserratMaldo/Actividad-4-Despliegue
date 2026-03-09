@@ -1,0 +1,20 @@
+name: Agenda Automation
+on:
+  push:
+env:
+    USER_NAME: ${{ secrets.USER_NAME }}
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+      - name: Configurar java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Compilar el proyecto en Maven
+        run: mvn compile
+      - name: Ejecutar pruebas unitarias
+        run: mvn test
