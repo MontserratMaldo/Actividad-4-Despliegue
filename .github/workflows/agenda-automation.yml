@@ -2,7 +2,7 @@ name: Agenda Automation
 on:
   push:
 env:
-    USER_NAME: ${{ secrets.USER_NAME }}
+    USER_NAME: Montse Maldonado
 jobs:
   build:
     runs-on: windows-latest
@@ -16,5 +16,7 @@ jobs:
           distribution: 'temurin'
       - name: Compilar el proyecto en Maven
         run: mvn compile
+      - name: Mostrar usuario
+        run: echo "Iniciando pruebas de la agenda de $USER_NAME"
       - name: Ejecutar pruebas unitarias
         run: mvn test

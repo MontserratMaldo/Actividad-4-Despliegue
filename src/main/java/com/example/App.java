@@ -11,7 +11,7 @@ public class App
         while (true) {
 
             // Menu
-            System.out.println("\nORGANIZADOR DE TAREAS - [Usuario: " + System.getenv("STUDENT_NAME") + "]");
+            System.out.println("\nORGANIZADOR DE TAREAS - [Usuario: " + System.getenv("USER_NAME") + "]");
             System.out.println("1. Agregar una nueva tarea");
             System.out.println("2. Listar tareas");
             System.out.println("3. Marcar tarea como completada");
