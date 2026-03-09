@@ -1,17 +1,20 @@
 package com.example;
 
-public class App 
-{
-    public static void main(String[] args)
-    {
-        int opcion;
+public class App {
+
+    public static void main(String[] args) {
+
         Agenda agenda = new Agenda(new java.util.ArrayList<>(), new java.util.ArrayList<>());
         java.util.Scanner scanner = new java.util.Scanner(System.in);
 
+        String usuario = System.getenv("USER_NAME");
+        if (usuario == null) {
+            usuario = "Usuario Local";
+        }
+
         while (true) {
 
-            // Menu
-            System.out.println("\nORGANIZADOR DE TAREAS - [Usuario: " + System.getenv("USER_NAME") + "]");
+            System.out.println("\nORGANIZADOR DE TAREAS - [Usuario: " + usuario + "]");
             System.out.println("1. Agregar una nueva tarea");
             System.out.println("2. Listar tareas");
             System.out.println("3. Marcar tarea como completada");
@@ -20,12 +23,13 @@ public class App
             System.out.println("6. Salir");
             System.out.println("Seleccione una opción:");
 
-            opcion = scanner.nextInt();
+            int opcion = scanner.nextInt();
 
             switch (opcion) {
+
                 case 1:
+                    scanner.nextLine();
                     System.out.println("Ingrese la descripción de la tarea:");
-                    scanner.nextLine(); // limpiar buffer
                     String descripcion = scanner.nextLine();
                     agenda.agregarTarea(descripcion);
                     break;
@@ -36,7 +40,7 @@ public class App
                     break;
 
                 case 3:
-                    System.out.println("Ingrese el índice de la tarea a marcar como completada:");
+                    System.out.println("Ingrese el índice de la tarea:");
                     int indexCompletada = scanner.nextInt();
                     agenda.marcarCompletada(indexCompletada);
                     break;
