@@ -7,10 +7,16 @@ public class App {
         Agenda agenda = new Agenda(new java.util.ArrayList<>(), new java.util.ArrayList<>());
         java.util.Scanner scanner = new java.util.Scanner(System.in);
 
+        // Obtener la variable de entorno USER_NAME
         String usuario = System.getenv("USER_NAME");
         if (usuario == null) {
             usuario = "Usuario Local";
         }
+
+        // Mostrar mensaje de bienvenida
+        System.out.println("\n====================================");
+        System.out.println("Iniciando pruebas de la agenda de " + usuario);
+        System.out.println("====================================\n");
 
         while (true) {
 
