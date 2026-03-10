@@ -13,11 +13,6 @@ public class App {
             usuario = "Usuario Local";
         }
 
-        // Mostrar mensaje de bienvenida
-        System.out.println("\n====================================");
-        System.out.println("Iniciando pruebas de la agenda de " + usuario);
-        System.out.println("====================================\n");
-
         while (true) {
 
             System.out.println("\nORGANIZADOR DE TAREAS - [Usuario: " + usuario + "]");
